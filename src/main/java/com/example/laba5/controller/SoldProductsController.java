@@ -1,6 +1,7 @@
 package com.example.laba5.controller;
 
 import com.example.laba5.domain.MoneyEntity;
+import com.example.laba5.domain.ProductEntity;
 import com.example.laba5.domain.SoldProductsEntity;
 import com.example.laba5.dto.MoneyDto;
 import com.example.laba5.dto.SoldProductsDto;
@@ -49,5 +50,17 @@ public class SoldProductsController {
         var content = service.findAllByVendingMachineByVendingMachineId(id);
         var temp = assembler.toCollectionModel(content);
         return new ResponseEntity<>(temp, HttpStatus.OK);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<?> deleteItem(@PathVariable Integer id) {
+        service.delete(id);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @PutMapping("/update/{id}")
+    public ResponseEntity<?> updateItem(@RequestBody SoldProductsEntity item, @PathVariable Integer id) {
+        service.update(id, item);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }

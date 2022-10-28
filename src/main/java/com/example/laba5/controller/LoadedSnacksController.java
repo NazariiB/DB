@@ -43,4 +43,16 @@ public class LoadedSnacksController {
         var temp = assembler.toModel(content);
         return new ResponseEntity<>(temp, HttpStatus.OK);
     }
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<?> deleteItem(@PathVariable Integer id) {
+        service.delete(id);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @PutMapping("/update/{id}")
+    public ResponseEntity<?> updateItem(@RequestBody LoadedSnackEntity item, @PathVariable Integer id) {
+        service.update(id, item);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 }

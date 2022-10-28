@@ -50,4 +50,16 @@ public class ContentOfTheMachineController {
         CollectionModel<ContentOfTheMachineDto> temp = contentAssembler.toCollectionModel(content);
         return new ResponseEntity<>(temp, HttpStatus.OK);
     }
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<?> deleteItem(@PathVariable Integer id) {
+        contentService.delete(id);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @PutMapping("/update/{id}")
+    public ResponseEntity<?> updateItem(@RequestBody ContentOfTheMachineEntity item, @PathVariable Integer id) {
+        contentService.update(id, item);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 }
