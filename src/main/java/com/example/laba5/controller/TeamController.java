@@ -56,4 +56,16 @@ public class TeamController {
         service.update(id, item);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+    @PostMapping("/new-procedure/{name}")
+    public ResponseEntity<?> insertUsingProcedure(@PathVariable String name) {
+        service.insertUsingProcedure(name);
+        return new ResponseEntity<>(HttpStatus.CREATED);
+    }
+
+    @PostMapping("/procedure")
+    public ResponseEntity<?> insert10Rows() {
+        service.insert10Rows();
+        return new ResponseEntity<>(HttpStatus.CREATED);
+    }
 }

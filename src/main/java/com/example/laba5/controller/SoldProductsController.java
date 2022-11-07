@@ -52,15 +52,15 @@ public class SoldProductsController {
         return new ResponseEntity<>(temp, HttpStatus.OK);
     }
 
-    @DeleteMapping("/delete/{id}")
-    public ResponseEntity<?> deleteItem(@PathVariable Integer id) {
-        service.delete(id);
-        return new ResponseEntity<>(HttpStatus.OK);
-    }
-
-    @PutMapping("/update/{id}")
-    public ResponseEntity<?> updateItem(@RequestBody SoldProductsEntity item, @PathVariable Integer id) {
-        service.update(id, item);
-        return new ResponseEntity<>(HttpStatus.OK);
-    }
+//    @DeleteMapping("/delete/{id}")
+//    public ResponseEntity<?> deleteItem(@PathVariable Integer id) {
+//        service.delete(id);
+//        return new ResponseEntity<>(HttpStatus.OK);
+//    }
+//
+//    @PutMapping("/update/{id}")
+//    public ResponseEntity<?> updateItem(@RequestBody SoldProductsEntity item, @PathVariable Integer id) {
+//        service.update(id, item);
+//        return new ResponseEntity<>(HttpStatus.OK);
+//    }
 }

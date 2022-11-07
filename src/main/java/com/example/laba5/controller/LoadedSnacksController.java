@@ -55,4 +55,10 @@ public class LoadedSnacksController {
         service.update(id, item);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+    @PostMapping("/new/{id}/{name}")
+    public ResponseEntity<?> insertbyProcedure(@PathVariable Integer id, @PathVariable String name) {
+        service.insertByProcedure(id, name);
+        return new ResponseEntity<>(HttpStatus.CREATED);
+    }
 }

@@ -47,4 +47,10 @@ public class LoadedSnacksServiceImpl implements LoadedSnacksService {
         var item = repository.findById(integer).orElseThrow(() -> new ItemNotFound(integer));
         repository.delete(item);
     }
+
+    @Override
+    @Transactional
+    public void insertByProcedure(Integer id, String name) {
+        repository.insertByProcedure(id, name);
+    }
 }

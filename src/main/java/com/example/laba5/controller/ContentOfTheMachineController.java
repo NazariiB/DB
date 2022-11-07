@@ -30,8 +30,6 @@ public class ContentOfTheMachineController {
 
     @PostMapping("/new")
     public ResponseEntity<ContentOfTheMachineDto> addContent(@RequestBody ContentOfTheMachineEntity entity) {
-        System.out.println("starrttttt");
-        System.out.println(entity);
         ContentOfTheMachineEntity item = contentService.create(entity);
         ContentOfTheMachineDto temp = contentAssembler.toModel(item);
         return new ResponseEntity<>(temp, HttpStatus.CREATED);

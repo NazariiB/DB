@@ -8,4 +8,6 @@ import java.util.List;
 
 public interface MoneyService extends GeneralService<MoneyEntity, Integer> {
     List<MoneyEntity> findAllByVendingMachineByVendingMachineId(Integer id);
+
+    Integer sumMoney();
 }

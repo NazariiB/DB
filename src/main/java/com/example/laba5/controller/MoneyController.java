@@ -66,4 +66,10 @@ public class MoneyController {
         service.update(id, item);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+    @GetMapping("/sum-money")
+    public ResponseEntity<Integer> sumMoney() {
+        var content = service.sumMoney();
+        return new ResponseEntity<>(content, HttpStatus.OK);
+    }
 }

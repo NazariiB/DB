@@ -58,4 +58,10 @@ public class MoneyServiceImpl implements MoneyService {
         machine.setId(id);
         return repository.findAllByVendingMachineByVendingMachineId(machine);
     }
+
+    @Override
+    public Integer sumMoney() {
+        return repository.sumMoney();
+    }
+
 }

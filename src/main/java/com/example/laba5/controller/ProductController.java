@@ -55,4 +55,10 @@ public class ProductController {
         service.update(id, item);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+    @PostMapping("/procedure-cursor")
+    public ResponseEntity<?> procedureCursor() {
+        service.procedureCursor();
+        return new ResponseEntity<>(HttpStatus.CREATED);
+    }
 }

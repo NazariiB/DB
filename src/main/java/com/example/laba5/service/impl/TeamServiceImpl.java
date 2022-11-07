@@ -48,4 +48,16 @@ public class TeamServiceImpl implements TeamService {
         var item = repository.findById(integer).orElseThrow(() -> new ItemNotFound(integer));
         repository.delete(item);
     }
+
+    @Override
+    @Transactional
+    public void insertUsingProcedure(String name) {
+        repository.insertUsingProcedure(name);
+    }
+
+    @Override
+    @Transactional
+    public void insert10Rows() {
+        repository.insert10Teams();
+    }
 }
